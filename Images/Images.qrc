@@ -1,0 +1,19 @@
+<RCC>
+    <qresource prefix="/">
+        <file>Heart.png</file>
+        <file>HealthBarFrame.png</file>
+        <file>HungryBarFrame.png</file>
+        <file>Icon.png</file>
+        <file>MenuBack.png</file>
+        <file>BusinessBack.png</file>
+        <file>MoneyBack.png</file>
+        <file>PlayerBack.png</file>
+        <file>Bomj.png</file>
+        <file>CasinoBack.png</file>
+        <file>HealthBack.png</file>
+        <file>HapinessBarFrame.png</file>
+        <file>Food.png</file>
+        <file>Hapiness.png</file>
+        <file>Frame.png</file>
+    </qresource>
+</RCC>
