@@ -35,17 +35,17 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
-    <Filter Include="Header Files\ScenesHeaders">
-      <UniqueIdentifier>{3116a4b0-3a8b-4d96-87d5-d32b3d03d89a}</UniqueIdentifier>
+    <Filter Include="Header Files\Scenes">
+      <UniqueIdentifier>{412aa10a-8c96-473f-a193-cb16c9bac8e7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Managers">
+      <UniqueIdentifier>{fa13b2cb-8d4f-4261-aa67-15733c482a63}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\Scenes">
-      <UniqueIdentifier>{23551670-da12-4bf3-811b-318bccb0df53}</UniqueIdentifier>
+      <UniqueIdentifier>{80305eb2-4030-4bc7-bdfd-7fb2a49de75a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Controllers">
-      <UniqueIdentifier>{eccec2a7-7093-4673-9ed5-f5b429eb4a28}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Controllers">
-      <UniqueIdentifier>{f99bfae2-13b9-4e22-8be5-0145bb212859}</UniqueIdentifier>
+    <Filter Include="Source Files\Manahers">
+      <UniqueIdentifier>{81a0d3c7-cfd4-4f1b-adc0-27400df60dba}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -55,79 +55,49 @@
     <ClCompile Include="mainWindow.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="businessScene.cpp">
-      <Filter>Source Files\Scenes</Filter>
+    <ClCompile Include="player.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="casinoScene.cpp">
-      <Filter>Source Files\Scenes</Filter>
-    </ClCompile>
-    <ClCompile Include="happinnesscene.cpp">
-      <Filter>Source Files\Scenes</Filter>
-    </ClCompile>
-    <ClCompile Include="healthScene.cpp">
-      <Filter>Source Files\Scenes</Filter>
+    <ClCompile Include="eventManager.cpp">
+      <Filter>Source Files\Manahers</Filter>
     </ClCompile>
     <ClCompile Include="mainMenuScene.cpp">
-      <Filter>Source Files\Scenes</Filter>
-    </ClCompile>
-    <ClCompile Include="moneyScene.cpp">
       <Filter>Source Files\Scenes</Filter>
     </ClCompile>
     <ClCompile Include="playerScene.cpp">
       <Filter>Source Files\Scenes</Filter>
     </ClCompile>
-    <ClCompile Include="propertyScene.cpp">
-      <Filter>Source Files\Scenes</Filter>
-    </ClCompile>
-    <ClCompile Include="InputController.cpp">
-      <Filter>Source Files\Controllers</Filter>
-    </ClCompile>
-    <ClCompile Include="player.cpp">
-      <Filter>Source Files\Controllers</Filter>
-    </ClCompile>
     <ClCompile Include="scene.cpp">
       <Filter>Source Files\Scenes</Filter>
     </ClCompile>
     <ClCompile Include="sceneManager.cpp">
-      <Filter>Source Files\Controllers</Filter>
+      <Filter>Source Files\Manahers</Filter>
+    </ClCompile>
+    <ClCompile Include="timeManager.cpp">
+      <Filter>Source Files\Manahers</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="mainWindow.h">
       <Filter>Header Files</Filter>
     </QtMoc>
-    <QtMoc Include="businessScene.h">
-      <Filter>Header Files\ScenesHeaders</Filter>
-    </QtMoc>
-    <QtMoc Include="casinoScene.h">
-      <Filter>Header Files\ScenesHeaders</Filter>
-    </QtMoc>
-    <QtMoc Include="happinnesscene.h">
-      <Filter>Header Files\ScenesHeaders</Filter>
-    </QtMoc>
-    <QtMoc Include="healthScene.h">
-      <Filter>Header Files\ScenesHeaders</Filter>
-    </QtMoc>
-    <QtMoc Include="mainMenuScene.h">
-      <Filter>Header Files\ScenesHeaders</Filter>
-    </QtMoc>
-    <QtMoc Include="moneyScene.h">
-      <Filter>Header Files\ScenesHeaders</Filter>
-    </QtMoc>
-    <QtMoc Include="propertyScene.h">
-      <Filter>Header Files\ScenesHeaders</Filter>
+    <QtMoc Include="eventManager.h">
+      <Filter>Header Files\Managers</Filter>
     </QtMoc>
     <QtMoc Include="playerScene.h">
-      <Filter>Header Files\ScenesHeaders</Filter>
+      <Filter>Header Files\Scenes</Filter>
     </QtMoc>
-    <QtMoc Include="InputController.h">
-      <Filter>Header Files\Controllers</Filter>
+    <QtMoc Include="mainMenuScene.h">
+      <Filter>Header Files\Scenes</Filter>
     </QtMoc>
     <QtMoc Include="sceneManager.h">
-      <Filter>Header Files\Controllers</Filter>
+      <Filter>Header Files\Managers</Filter>
     </QtMoc>
     <QtMoc Include="scene.h">
-      <Filter>Header Files\ScenesHeaders</Filter>
+      <Filter>Header Files\Scenes</Filter>
+    </QtMoc>
+    <QtMoc Include="timeManager.h">
+      <Filter>Header Files\Managers</Filter>
     </QtMoc>
   </ItemGroup>
   <ItemGroup>
@@ -145,7 +115,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="player.h">
-      <Filter>Header Files\Controllers</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

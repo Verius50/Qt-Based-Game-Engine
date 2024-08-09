@@ -11,13 +11,12 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{9B3A49A4-69E5-3C2E-8430-0B26E6310DEA}</ProjectGuid>
-    <RootNamespace>Bomjara</RootNamespace>
+    <ProjectGuid>{386B0288-9B9A-3397-9952-1035DD520E2D}</ProjectGuid>
+    <RootNamespace>Engine</RootNamespace>
     <Keyword>QtVS_v304</Keyword>
     <WindowsTargetPlatformVersion>10.0.22621.0</WindowsTargetPlatformVersion>
     <WindowsTargetPlatformMinVersion>10.0.22621.0</WindowsTargetPlatformMinVersion>
     <QtMsBuild Condition="'$(QtMsBuild)'=='' OR !Exists('$(QtMsBuild)\qt.targets')">$(MSBuildProjectDirectory)\QtMsBuild</QtMsBuild>
-    <ProjectName>Qt-based Game Engine</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
@@ -27,7 +26,7 @@
     <CharacterSet>NotSet</CharacterSet>
     <ConfigurationType>Application</ConfigurationType>
     <IntermediateDirectory>release\</IntermediateDirectory>
-    <PrimaryOutput>Bomjara</PrimaryOutput>
+    <PrimaryOutput>Engine</PrimaryOutput>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <PlatformToolset>v143</PlatformToolset>
@@ -36,7 +35,7 @@
     <CharacterSet>NotSet</CharacterSet>
     <ConfigurationType>Application</ConfigurationType>
     <IntermediateDirectory>debug\</IntermediateDirectory>
-    <PrimaryOutput>Bomjara</PrimaryOutput>
+    <PrimaryOutput>Engine</PrimaryOutput>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <Import Project="$(QtMsBuild)\qt_defaults.props" Condition="Exists('$(QtMsBuild)\qt_defaults.props')" />
@@ -47,8 +46,6 @@
   <PropertyGroup Label="QtSettings" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <QtInstall>6.7.2_msvc2019_64</QtInstall>
     <QtModules>core;gui;widgets</QtModules>
-    <QtDeployQmlDir>..\..\BomjaraDebug\</QtDeployQmlDir>
-    <QtDeployFiles>..\..\BomjaraDebug\</QtDeployFiles>
   </PropertyGroup>
   <Target Name="QtMsBuildNotFound" BeforeTargets="CustomBuild;ClCompile" Condition="!Exists('$(QtMsBuild)\qt.targets') OR !Exists('$(QtMsBuild)\Qt.props')">
     <Message Importance="High" Text="QtMsBuild: could not locate qt.targets, qt.props; project may not build correctly." />
@@ -66,12 +63,12 @@
   <PropertyGroup>
     <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">release\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">release\</IntDir>
-    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Bomjara</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Engine</TargetName>
     <IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</IgnoreImportLibrary>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">..\..\BomjaraDebug\</OutDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">..\..\BomjaraDebug\</IntDir>
-    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Bomjara</TargetName>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">..\..\EngineDebug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">..\..\EngineDebug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Engine</TargetName>
     <IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</IgnoreImportLibrary>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -107,7 +104,7 @@
       <IgnoreImportLibrary>true</IgnoreImportLibrary>
       <LinkIncremental>false</LinkIncremental>
       <OptimizeReferences>true</OptimizeReferences>
-      <OutputFile>$(OutDir)\Bomjara.exe</OutputFile>
+      <OutputFile>$(OutDir)\Engine.exe</OutputFile>
       <RandomizedBaseAddress>true</RandomizedBaseAddress>
       <SubSystem>Windows</SubSystem>
       <SuppressStartupBanner>true</SuppressStartupBanner>
@@ -141,13 +138,13 @@
     <ClCompile>
       <AdditionalIncludeDirectories>GeneratedFiles\$(ConfigurationName);GeneratedFiles;.;debug;/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>-Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -permissive- -Zc:__cplusplus -Zc:externConstexpr -utf-8 -w34100 -w34189 -w44996 -w44456 -w44457 -w44458 %(AdditionalOptions)</AdditionalOptions>
-      <AssemblerListingLocation>..\..\BomjaraDebug\</AssemblerListingLocation>
+      <AssemblerListingLocation>..\..\EngineDebug\</AssemblerListingLocation>
       <BrowseInformation>false</BrowseInformation>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <DisableSpecificWarnings>4577;4467;%(DisableSpecificWarnings)</DisableSpecificWarnings>
       <ExceptionHandling>Sync</ExceptionHandling>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <ObjectFileName>..\..\BomjaraDebug\</ObjectFileName>
+      <ObjectFileName>..\..\EngineDebug\</ObjectFileName>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>_WINDOWS;UNICODE;_UNICODE;WIN32;_ENABLE_EXTENDED_ALIGNED_STORAGE;WIN64;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PreprocessToFile>false</PreprocessToFile>
@@ -165,7 +162,7 @@
       <DataExecutionPrevention>true</DataExecutionPrevention>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreImportLibrary>true</IgnoreImportLibrary>
-      <OutputFile>$(OutDir)\Bomjara.exe</OutputFile>
+      <OutputFile>$(OutDir)\Engine.exe</OutputFile>
       <RandomizedBaseAddress>true</RandomizedBaseAddress>
       <SubSystem>Windows</SubSystem>
       <SuppressStartupBanner>true</SuppressStartupBanner>
@@ -183,7 +180,7 @@
       <Include>./$(Configuration)/moc_predefs.h</Include>
       <ExecutionDescription>Moc'ing %(Identity)...</ExecutionDescription>
       <DynamicSource>output</DynamicSource>
-      <QtMocDir>..\..\BomjaraDebug\</QtMocDir>
+      <QtMocDir>..\..\EngineDebug\</QtMocDir>
       <QtMocFileName>moc_%(Filename).cpp</QtMocFileName>
     </QtMoc>
     <QtRcc>
@@ -191,39 +188,29 @@
       <Compression>default</Compression>
       <NoZstd>true</NoZstd>
       <ExecutionDescription>Rcc'ing %(Identity)...</ExecutionDescription>
-      <QtRccDir>..\..\BomjaraDebug\</QtRccDir>
+      <QtRccDir>..\..\EngineDebug\</QtRccDir>
       <QtRccFileName>qrc_%(Filename).cpp</QtRccFileName>
     </QtRcc>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="businessScene.cpp" />
-    <ClCompile Include="casinoScene.cpp" />
-    <ClCompile Include="happinnesscene.cpp" />
-    <ClCompile Include="healthScene.cpp" />
-    <ClCompile Include="InputController.cpp" />
+    <ClCompile Include="eventManager.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="mainMenuScene.cpp" />
     <ClCompile Include="mainWindow.cpp" />
-    <ClCompile Include="moneyScene.cpp" />
     <ClCompile Include="player.cpp" />
     <ClCompile Include="playerScene.cpp" />
-    <ClCompile Include="propertyScene.cpp" />
     <ClCompile Include="scene.cpp" />
     <ClCompile Include="sceneManager.cpp" />
+    <ClCompile Include="timeManager.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <QtMoc Include="healthScene.h" />
+    <QtMoc Include="timeManager.h" />
     <QtMoc Include="mainMenuScene.h" />
     <QtMoc Include="mainWindow.h" />
-    <QtMoc Include="moneyScene.h" />
-    <QtMoc Include="businessScene.h" />
-    <QtMoc Include="casinoScene.h" />
-    <QtMoc Include="happinnesscene.h" />
-    <QtMoc Include="InputController.h" />
+    <QtMoc Include="eventManager.h" />
     <ClInclude Include="player.h" />
     <QtMoc Include="playerScene.h" />
     <QtMoc Include="scene.h" />
-    <QtMoc Include="propertyScene.h" />
     <QtMoc Include="sceneManager.h" />
   </ItemGroup>
   <ItemGroup>

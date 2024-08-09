@@ -7,6 +7,19 @@ void Scene::clearScene(){
     objs.clear();
 }
 
+void Scene::hide() {
+    for (int i = 0; i < objs.size(); i++) {
+        objs[i]->hide();
+    }
+}
+
+void Scene::show() {
+    for (int i = 0; i < objs.size(); i++) {
+        objs[i]->show();
+    }
+}
+
+
 int Scene::getIndexOfObjectByName(QString name)
 {
     for (int i = 0; i < objs.size(); i++)
@@ -15,47 +28,7 @@ int Scene::getIndexOfObjectByName(QString name)
     return -1;
 }
 
-void Scene::addMainButtons(int currentSceneIndex) {
-    QVector<QPushButton*> buttons;
 
-    buttons.push_back(new QPushButton("MY PLAYER", parentWidget));
-    buttons[0]->setObjectName("First main button");
-    buttons.push_back(new QPushButton("MONEY", parentWidget));
-    buttons.push_back(new QPushButton("HEALTH", parentWidget));
-    buttons.push_back(new QPushButton("HAPPINNES", parentWidget));
-    buttons.push_back(new QPushButton("BUSINESS", parentWidget));
-    buttons.push_back(new QPushButton("CASINO", parentWidget));
-    buttons.push_back(new QPushButton("PROPERTYES", parentWidget));
-
-    int countOfButtons = buttons.size();
-
-    float widthButton = (sceneSize.width() * 5 / 7) / (countOfButtons);
-    float step = (sceneSize.width() * 2 / 7) / (countOfButtons + 1);
-
-    float currentPosX = step;
-    for (int i = 0; i < countOfButtons; i++) {
-        QPushButton* currentButton = buttons[i];
-
-        currentButton->setGeometry(currentPosX, sceneSize.height() - 125, widthButton, 50);
-        currentPosX += (widthButton + step);
-
-        objs.push_back(currentButton);
-        currentButton->show();
-    }
-    
-
-    connect(buttons[0], SIGNAL(pressed()), sceneManager, SLOT(goToPlayerScene()));
-    connect(buttons[1], SIGNAL(pressed()), sceneManager, SLOT(goToMoneyScene()));
-    connect(buttons[2], SIGNAL(pressed()), sceneManager, SLOT(goToHealthScene()));
-    connect(buttons[3], SIGNAL(pressed()), sceneManager, SLOT(goToHapinnesScene()));
-    connect(buttons[4], SIGNAL(pressed()), sceneManager, SLOT(goToBusinessScene()));
-    connect(buttons[5], SIGNAL(pressed()), sceneManager, SLOT(goToCasinoScene()));
-    connect(buttons[6], SIGNAL(pressed()), sceneManager, SLOT(goToPropertyScene()));
-
-    if(currentSceneIndex != -1)
-        buttons[currentSceneIndex - 1]->setEnabled(0);
-   
-}
 
 void Scene::addPlayerValuesHUD(QSize positionFromRTCorner, QSize iconsSize, QSize spacings, float barsLenght)
 {

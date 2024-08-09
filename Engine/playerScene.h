@@ -15,14 +15,13 @@ private:
 public:
     PlayerScene() : Scene() {
     }
-    PlayerScene(QWidget* parent, SceneManager* sceneManager, InputController* inputController,
-        Player* player, QSize screenSize = QSize(0, 0)) : Scene(parent, sceneManager, inputController, player, screenSize)
+    PlayerScene(QWidget* parent, SceneManager* sceneManager, EventManager* eventManager,
+        Player* player, QSize screenSize = QSize(0, 0)) : Scene(parent, sceneManager, eventManager, player, screenSize)
     {
 
     }
     void initScene() override;
-    void hide() override;
-    void show() override;
+
     
     ~PlayerScene() {
         clearScene();

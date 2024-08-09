@@ -6,7 +6,7 @@
 
 #include "SceneManager.h"
 #include "scene.h"
-#include "InputController.h"
+#include "eventManager.h"
 
 class Window : public QMainWindow{
     Q_OBJECT
@@ -14,12 +14,11 @@ public:
     Window(QWidget *parent = nullptr);
     ~Window();
 private:
-    Scene* currentScene;
     Player* player;
 
     QSize screenSize;
     SceneManager sceneManager;
-    InputController inputController;
+    EventManager eventManager;
 
 private slots:
 

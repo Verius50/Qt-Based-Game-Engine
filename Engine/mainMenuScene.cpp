@@ -13,17 +13,7 @@ void MainMenuScene::initScene(){
     addMainButtons();
 }
 
-void MainMenuScene::hide(){
-    for(int i = 0; i < objs.size(); i++) {
-        objs[i]->hide();
-    }
-}
 
-void MainMenuScene::show(){
-    for(int i = 0; i < objs.size(); i++) {
-        objs[i]->show();
-    }
-}
 
 void MainMenuScene::addMainButtons(){
     objs.push_back(new QPushButton("START GAME", parentWidget));

@@ -5,7 +5,7 @@
 #include <QPushButton>
 #include "qlabel.h"
 #include "Player.h"
-#include "InputController.h"
+#include "eventManager.h"
 
 class Scene : public QObject{
     Q_OBJECT
@@ -17,25 +17,25 @@ public:
     QVector<QWidget*> objs;
     Player* player;
     QObject* sceneManager;
-    InputController* inputController;
+    EventManager* eventManager;
 
-    Scene() { parentWidget = nullptr; player = nullptr; sceneManager = nullptr; inputController = nullptr; }
+    Scene() { parentWidget = nullptr; player = nullptr; sceneManager = nullptr; eventManager = nullptr; }
 
-    Scene(QWidget* parent, QObject* sceneManager, InputController* inputController, Player* player, QSize screenSize = QSize(0, 0)) {
+    Scene(QWidget* parent, QObject* sceneManager, EventManager* eventManager, Player* player, QSize screenSize = QSize(0, 0)) {
         parentWidget = parent;
         this->sceneManager = sceneManager;
         sceneSize = screenSize;
         this->player = player;
-        this->inputController = inputController;
+        this->eventManager = eventManager;
     }
+    
     virtual void initScene() = 0;
-    virtual void hide() = 0;
-    virtual void show() = 0;
-
-
+    
+    
+    void hide();
+    void show();
     void clearScene();
     int getIndexOfObjectByName(QString name);
-    void addMainButtons(int currentSceneIndex);
 
     void addPlayerValuesHUD(QSize positionFromRTCorner = {350, 80}, 
         QSize iconsSize = { 40, 40 }, QSize spacings = {50, 80}, float barsLenght = 200);
